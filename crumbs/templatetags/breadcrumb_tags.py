@@ -5,7 +5,7 @@ from django import template
 from django.template.loader import render_to_string
 from django.core.urlresolvers import reverse
 
-from breadcrumbs.templatetags import CaktNode, parse_args_kwargs
+from crumbs.templatetags import CaktNode, parse_args_kwargs
 
 
 register = template.Library()
@@ -37,7 +37,7 @@ def render_breadcrumbs(context):
         crumbs = context['request'].breadcrumbs
     except AttributeError:
         crumbs = None
-    if crumbs and len(crumbs) == 0:
+    if crumbs and len(crumbs) == 1:
         crumbs = None
     return {
         'crumbs': crumbs,
