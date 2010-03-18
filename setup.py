@@ -1,11 +1,6 @@
 import os
 from setuptools import setup, find_packages
 
-packages = find_packages()
-packages += [
-    'crumbs.templates',
-    'crumbs.templates.crumbs',
-]
 setup(
     name='django-crumbs',
     version='0.0.0',
