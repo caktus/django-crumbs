@@ -19,13 +19,11 @@ class AddCrumbNode(CaktNode):
                 href = url
             else:
                 href = reverse(url, args=args)
-        try:
+        if 'request' in context:
             if not hasattr(context['request'], 'breadcrumbs'):
                 context['request'].breadcrumbs = []
             context['request'].breadcrumbs.append((crumb, href))
-        except KeyError:
-            pass
-            return ''
+        return ''
 
 
 @register.tag
@@ -36,9 +34,9 @@ def add_crumb(parser, token):
 
 @register.inclusion_tag('breadcrumbs/crumbs.html', takes_context=True)
 def render_breadcrumbs(context):
-    try:
+    if 'request' in context:
         crumbs = context['request'].breadcrumbs
-    except KeyError:
+    else:
         crumbs = None
     if crumbs and len(crumbs) == 1:
         crumbs = None
