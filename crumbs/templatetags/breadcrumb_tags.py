@@ -34,7 +34,7 @@ def add_crumb(parser, token):
 
 @register.inclusion_tag('breadcrumbs/crumbs.html', takes_context=True)
 def render_breadcrumbs(context):
-    if 'request' in context:
+    if 'request' in context and hasattr(context['request'], 'breadcrumbs'):
         crumbs = context['request'].breadcrumbs
     else:
         crumbs = None
