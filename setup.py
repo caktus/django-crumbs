@@ -1,6 +1,9 @@
 import os
 from setuptools import setup, find_packages
 
+packages = find_packages()
+packages.remove('sample_project')
+
 setup(
     name='django-crumbs',
     version='0.0.0',
