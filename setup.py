@@ -6,17 +6,25 @@ packages.remove('sample_project')
 
 setup(
     name='django-crumbs',
-    version='0.0.0',
+    version=__import__('crumbs').__version__,
     author='Caktus Consulting Group',
     author_email='solutions@caktusgroup.com',
     packages=find_packages(),
-    install_requires = ['Django >= 1.1,==dev',],
     include_package_data = True,
     exclude_package_data={
         '': ['*.sql', '*.pyc',],
     },
-    url='http://code.google.com/p/django-crumbs/',
+    url='http://github.com/caktus/django-crumbs/',
     license='LICENSE.txt',
     description='A pluggable Django app for adding breadcrumbs to your project. ',
-    long_description=open('README.txt').read(),
+    classifiers=[
+        'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Programming Language :: Python',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Development Status :: 4 - Beta',
+        'Operating System :: OS Independent',
+    ],
+    long_description=open('README.rst').read(),
 )
