@@ -21,5 +21,6 @@ setup(
         'Operating System :: OS Independent',
     ],
     long_description=open('README.rst').read(),
+    zip_safe=False,
 )
 
