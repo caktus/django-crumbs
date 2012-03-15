@@ -17,6 +17,10 @@ Installation
         'crumbs',
     )
 
+3) Make sure you have the "request" context processor in your config.
+
+    TEMPLATE_CONTEXT_PROCESSORS += ['django.core.context_processors.request']
+
 How It Works
 ============
 1) In each template, you'll need to use the add_crumb template tag to append items to the trail::
