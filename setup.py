@@ -6,7 +6,7 @@ setup(
     author='Caktus Consulting Group',
     author_email='solutions@caktusgroup.com',
     include_package_data=True,
-    packages=find_packages(exclude=['sample_project']),
+    packages=find_packages(),
     exclude_package_data={'': ['*.sql', '*.pyc']},
     url='http://github.com/caktus/django-crumbs/',
     license='BSD',
