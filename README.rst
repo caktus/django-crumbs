@@ -17,7 +17,7 @@ Installation
         'crumbs',
     )
 
-3) Make sure you have the "request" context processor in your config.
+3) Make sure you have the "request" context processor in your config::
 
     TEMPLATE_CONTEXT_PROCESSORS += ['django.core.context_processors.request']
 
@@ -38,7 +38,7 @@ Setup
 =====
 
 1) In your base.html template, add something along the lines of the following code::
- 
+
     <div id="breadcrumbs">
         {% block breadcrumb %}
             {% load breadcrumb_tags %}
@@ -48,7 +48,7 @@ Setup
     </div>
 
 2) Now in each extended child template, simply add a new crumb to the trail in the breadcrumb block::
-    
+
     {% block breadcrumb %}
         {{ block.super }}
         {% load breadcrumb_tags %}
@@ -59,7 +59,7 @@ Example
 =======
 
 1) base.html::
-    
+
         <div id="breadcrumbs">
             {% block breadcrumb %}
                 {% load breadcrumb_tags %}
@@ -69,7 +69,7 @@ Example
         </div>
 
 2) person/list.html::
-    
+
         {% extends "base.html" %}
         {% block breadcrumb %}
             {{ block.super }}
@@ -78,14 +78,14 @@ Example
         {% endblock %}
 
 3) person/view.html::
-    
+
         {% extends "person/list.html" %}
         {% block breadcrumb %}
             {{ block.super }}
             {% load breadcrumb_tags %}
             {% add_crumb person.name 'view_person' person.pk %}
         {% endblock %}
-        
+
 
 Development sponsored by `Caktus Consulting Group, LLC
 <http://www.caktusgroup.com/services>`_.
