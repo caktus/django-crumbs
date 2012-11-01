@@ -21,39 +21,21 @@ Installation
 
     TEMPLATE_CONTEXT_PROCESSORS += ['django.core.context_processors.request']
 
-How It Works
+How it Works
 ============
-1) In each template, you'll need to use the add_crumb template tag to append items to the trail::
 
-    # basic crumb without a link
-    {% add_crumb 'People' %}
-    # crumb with link
-    {% add_crumb 'People' 'list_people' %}
-    # crumb with link and args
-    {% add_crumb person.name 'view_person' person.pk %}
+django-crumbs provides two template tags. One (``add_crumb``) adds a breadcrumb
+to the current breadcrubs, the other (``render_breadcrumbs``) actually renders the
+accumulated breadcrumbs.
 
-*Note:* no bread crumbs will be printed if only one call to add_crumb has been made.
+In your base template, you will generally include a template block that uses
+``add_crumb`` to set up an initial first breadcrumb. You can then extend
+the breadcrumbs by defining the same block in child templates, using
+``{{ block.super }}`` to maintain the content from parent templates, and
+adding additional breadcrumbs with additional ``add_crumb`` tags.
 
-Setup
-=====
-
-1) In your base.html template, add something along the lines of the following code::
-
-    <div id="breadcrumbs">
-        {% block breadcrumb %}
-            {% load breadcrumb_tags %}
-            {% add_crumb 'Home' 'home' %}
-        {% endblock %}
-        {% render_breadcrumbs %}
-    </div>
-
-2) Now in each extended child template, simply add a new crumb to the trail in the breadcrumb block::
-
-    {% block breadcrumb %}
-        {{ block.super }}
-        {% load breadcrumb_tags %}
-        {% add_crumb 'People' 'list_people' %}
-    {% endblock %}
+To render the accumulated breadcrumbs, include the ``render_breadrubms`` tag
+in the base template after the block which accumulates the breadcrumbs.
 
 Example
 =======
@@ -85,6 +67,15 @@ Example
             {% load breadcrumb_tags %}
             {% add_crumb person.name 'view_person' person.pk %}
         {% endblock %}
+
+
+Requirements
+============
+
+- django >= 1.3
+
+Django 1.3 is the minimum level that is currently tested, it's likely that the django-crumbs code
+still works fine on earlier Django versions.
 
 
 Development sponsored by `Caktus Consulting Group, LLC
