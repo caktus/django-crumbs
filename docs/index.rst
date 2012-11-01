@@ -5,8 +5,8 @@
 
 .. include:: ../README.rst
 
-Contents
---------
+Documentation Contents
+======================
 
 .. toctree::
    :maxdepth: 2

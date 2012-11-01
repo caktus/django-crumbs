@@ -4,7 +4,7 @@ django-crumbs
 django-crumbs is a pluggable Django app for adding breadcrumbs to your project.
 
 Installation
-============
+------------
 
 1) Install django-crumbs with pip::
 
@@ -22,7 +22,7 @@ Installation
     TEMPLATE_CONTEXT_PROCESSORS += ['django.core.context_processors.request']
 
 How it Works
-============
+------------
 
 django-crumbs provides two template tags. One (``add_crumb``) adds a breadcrumb
 to the current breadcrubs, the other (``render_breadcrumbs``) actually renders the
@@ -38,7 +38,7 @@ To render the accumulated breadcrumbs, include the ``render_breadrubms`` tag
 in the base template after the block which accumulates the breadcrumbs.
 
 Example
-=======
+-------
 
 1) base.html::
 
@@ -70,7 +70,7 @@ Example
 
 
 Requirements
-============
+------------
 
 - django >= 1.3
 
@@ -78,13 +78,13 @@ Django 1.3 is the minimum level that is currently tested, it's likely that the d
 still works fine on earlier Django versions.
 
 Documentation
-=============
+-------------
 
 Full documentation for django-crumbs is availbe on
 `Read the Docs <http://django-crumbs.readthedocs.org/#contents>`_.
 
 License
-=======
+-------
 
 django-crumbs is released under the BSD License. See the
 `LICENSE.txt <https://github.com/caktus/django-crumbs/blob/master/LICENSE.txt>`_
