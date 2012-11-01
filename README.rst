@@ -77,6 +77,18 @@ Requirements
 Django 1.3 is the minimum level that is currently tested, it's likely that the django-crumbs code
 still works fine on earlier Django versions.
 
+Documentation
+=============
+
+Full documentation for django-crumbs is availbe on
+`Read the Docs <http://django-crumbs.readthedocs.org/#contents>`_.
+
+License
+=======
+
+django-crumbs is released under the BSD License. See the
+`LICENSE.txt <https://github.com/caktus/django-crumbs/blob/master/LICENSE.txt>`_
+file for more details.
 
 Development sponsored by `Caktus Consulting Group, LLC
 <http://www.caktusgroup.com/services>`_.
